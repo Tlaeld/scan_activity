@@ -7,7 +7,7 @@
 
 2、将config内的`bot_def.json`文件修改并复制为`bot.json`
 
-3、新建一个`JD_COOKIE.txt`文件将COOKIE放在里面，一个cookie一行
+3、在根目录里新建一个`JD_COOKIE.txt`文件将COOKIE放在里面，一个cookie一行
 
 4、运行程序`python bot.py`
 
