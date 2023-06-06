@@ -1,0 +1,6 @@
+{
+    "bot_token": "9999:AAAAAAAA",
+    "need_proxy": false,
+    "proxy": "socks5://127.0.0.1:1900",
+    "group_id": -1000000000
+}
