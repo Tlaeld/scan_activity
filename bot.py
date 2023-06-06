@@ -296,7 +296,7 @@ async def sacn(bot,group_id,cookies,pt_pin):
                         data['LZ_TOKEN_VALUE'] = LZ_TOKEN_VALUE
                         with open('./config/User_{}.json'.format(pt_pin), 'w',encoding='utf-8') as f:
                             json.dump(data, f)
-        time.sleep(5)
+        # time.sleep(5)
 
 
 if __name__ == '__main__':
