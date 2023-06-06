@@ -137,7 +137,7 @@ def init_User(cookies,pt_pin):
             'LZ_TOKEN_KEY': LZ_TOKEN_KEY,
             'LZ_TOKEN_VALUE': LZ_TOKEN_VALUE,
             'pt_pin': pt_pin,
-            'pt_key': cookies.split(';')[0].split('=')[1],
+            'pt_key': re.findall(r"pt_key=(.*?);", i)[0],
             'JSESSIONID': JSESSIONID
         }
         data = {
