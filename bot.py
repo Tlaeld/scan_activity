@@ -262,7 +262,15 @@ async def sacn(bot,group_id,cookies,pt_pin):
                                     f.write(activityId + '\n')
                                     time.sleep(3)
                                 except:
-                                    print("发送失败")
+                                    print("发送失败,try again")
+                                    time.sleep(3)
+                                    try:
+                                        await bot.send_message(group_id,str1)
+                                        f.write(activityId + '\n')
+                                        time.sleep(3)
+                                    except:
+                                        print("发送失败, stop")
+
                                 
 
                     print("scan_{}_{} 运行结束".format(num,topNewType))
