@@ -8,6 +8,8 @@ import time
 # 获取当前文件位置
 import os
 
+UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+
 with open("./config/bot.json", 'r', encoding='utf-8') as f:
     BOT = json.load(f)
 
@@ -103,7 +105,7 @@ def init_User(cookies,pt_pin):
         global AUTH_C_USER
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'User-Agent': 'jdapp;android;10.3.2;;;appBuild/92141;ef/1;ep/%7B%22hdid%22%3A%22JM9F1ywUPwflvMIpYPok0tt5k9kW4ArJEU3lfLhxBqw%3D%22%2C%22ts%22%3A1653297007579%2C%22ridx%22%3A-1%2C%22cipher%22%3A%7B%22sv%22%3A%22CJO%3D%22%2C%22ad%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%2C%22od%22%3A%22%22%2C%22ov%22%3A%22CzK%3D%22%2C%22ud%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%7D%2C%22ciphertype%22%3A5%2C%22version%22%3A%221.2.0%22%2C%22appname%22%3A%22com.jingdong.app.mall%22%7D;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; GM1910 Build/RKQ1.201022.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Mobile Safari/537.36',
+            'User-Agent': UA,
             'Cookie': cookies,
             'Host': 'api.m.jd.com',
             'Accept': '*/*',
@@ -116,7 +118,7 @@ def init_User(cookies,pt_pin):
 
         headers = {
             'Host': 'lzkj-isv.isvjd.com',
-            'User-Agent': 'jdapp;android;10.3.2;;;appBuild/92141;ef/1;ep/%7B%22hdid%22%3A%22JM9F1ywUPwflvMIpYPok0tt5k9kW4ArJEU3lfLhxBqw%3D%22%2C%22ts%22%3A1653297007579%2C%22ridx%22%3A-1%2C%22cipher%22%3A%7B%22sv%22%3A%22CJO%3D%22%2C%22ad%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%2C%22od%22%3A%22%22%2C%22ov%22%3A%22CzK%3D%22%2C%22ud%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%7D%2C%22ciphertype%22%3A5%2C%22version%22%3A%221.2.0%22%2C%22appname%22%3A%22com.jingdong.app.mall%22%7D;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; GM1910 Build/RKQ1.201022.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Mobile Safari/537.36',
+            'User-Agent': UA,
             'Referer': 'https://lzkj-isv.isvjd.com/',
             'Cookie': cookies,
         }
@@ -128,7 +130,7 @@ def init_User(cookies,pt_pin):
         url = "https://lzkj-isv.isvjd.com/customer/getMyPing"
         headers = {
             'Host': 'lzkj-isv.isvjd.com',
-            'User-Agent':'jdapp;android;10.3.2;;;appBuild/92141;ef/1;ep/%7B%22hdid%22%3A%22JM9F1ywUPwflvMIpYPok0tt5k9kW4ArJEU3lfLhxBqw%3D%22%2C%22ts%22%3A1653297007579%2C%22ridx%22%3A-1%2C%22cipher%22%3A%7B%22sv%22%3A%22CJO%3D%22%2C%22ad%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%2C%22od%22%3A%22%22%2C%22ov%22%3A%22CzK%3D%22%2C%22ud%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%7D%2C%22ciphertype%22%3A5%2C%22version%22%3A%221.2.0%22%2C%22appname%22%3A%22com.jingdong.app.mall%22%7D;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; GM1910 Build/RKQ1.201022.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Mobile Safari/537.36',
+            'User-Agent':UA,
             'Origin': 'https://lzkj-isv.isvjd.com',
             'Referer':'https://lzkj-isv.isvjd.com/wxAssemblePage/activity/67dfd244aacb438893a73a03785a48c7?activityId=67dfd244aacb438893a73a03785a48c7&adsource=tg_qrCode',
             'content-type': 'application/x-www-form-urlencoded'
@@ -204,7 +206,7 @@ async def sacn(bot,group_id,cookies,pt_pin):
                         'Connection': 'keep-alive',
                         'Accept': 'application/json, text/javascript, */*; q=0.01',
                         'X-Requested-With': 'XMLHttpRequest',
-                        'User-Agent': 'jdapp;android;10.3.2;;;appBuild/92141;ef/1;ep/%7B%22hdid%22%3A%22JM9F1ywUPwflvMIpYPok0tt5k9kW4ArJEU3lfLhxBqw%3D%22%2C%22ts%22%3A1653297007579%2C%22ridx%22%3A-1%2C%22cipher%22%3A%7B%22sv%22%3A%22CJO%3D%22%2C%22ad%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%2C%22od%22%3A%22%22%2C%22ov%22%3A%22CzK%3D%22%2C%22ud%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%7D%2C%22ciphertype%22%3A5%2C%22version%22%3A%221.2.0%22%2C%22appname%22%3A%22com.jingdong.app.mall%22%7D;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; GM1910 Build/RKQ1.201022.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Mobile Safari/537.36',
+                        'User-Agent': UA,
                         'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8',
                         'Origin':'https://lzkj-isv.isvjcloud.com',
                         'Sec-Fetch-Site':'same-origin',
@@ -249,7 +251,7 @@ async def sacn(bot,group_id,cookies,pt_pin):
                             # 如果不在文件中，则写入文件
                             with open(PATH + '/data/scan_{}.txt'.format(num), 'a') as f:
                                 # str1 = "export M_WX_FOLLOW_DRAW_URL=\""  + i['activityUrl'] + "\""
-                                str1 = i['activityUrl'] + "\""
+                                str1 = i['activityUrl']
                                 print(str1)
                                 # if times == 5:
                                 #     time.sleep(100)
@@ -258,7 +260,7 @@ async def sacn(bot,group_id,cookies,pt_pin):
                                 try:
                                     await bot.send_message(group_id,str1)
                                     f.write(activityId + '\n')
-                                    time.sleep(1)
+                                    time.sleep(3)
                                 except:
                                     print("发送失败")
                                 
@@ -272,7 +274,7 @@ async def sacn(bot,group_id,cookies,pt_pin):
                         'Host': 'lzkj-isv.isvjcloud.com',
                         'Connection':'keep-alive',
                         'accept': 'application/json, text/javascript, */*; q=0.01',
-                        'user-agent': "jdapp;android;10.3.2;;;appBuild/92141;ef/1;ep/%7B%22hdid%22%3A%22JM9F1ywUPwflvMIpYPok0tt5k9kW4ArJEU3lfLhxBqw%3D%22%2C%22ts%22%3A1653298229398%2C%22ridx%22%3A-1%2C%22cipher%22%3A%7B%22sv%22%3A%22CJO%3D%22%2C%22ad%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%2C%22od%22%3A%22%22%2C%22ov%22%3A%22CzK%3D%22%2C%22ud%22%3A%22EQZwZNCyY2YyDQS3ZtHsEG%3D%3D%22%7D%2C%22ciphertype%22%3A5%2C%22version%22%3A%221.2.0%22%2C%22appname%22%3A%22com.jingdong.app.mall%22%7D;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; GM1910 Build/RKQ1.201022.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/101.0.4951.61 Mobile Safari/537.36",
+                        'user-agent': UA,
                         'accept-language': 'zh-Hans-JP;q=1, en-JP;q=0.9, zh-Hant-TW;q=0.8, ja-JP;q=0.7, en-US;q=0.6',
                         'X-Requested-With': 'XMLHttpRequest',
                         'Sec-Fetch-Mode': 'cors',
@@ -313,6 +315,4 @@ if __name__ == '__main__':
             asyncio.run(sacn(bot,group_id,i,pt_pin))
     except Exception as e:
         print(e)
-
-
 
