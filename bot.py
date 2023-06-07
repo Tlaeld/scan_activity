@@ -5,6 +5,8 @@ from telegram import Bot
 import requests
 import json
 import time
+from functools import partial
+print = partial(print, flush=True)
 # 获取当前文件位置
 import os
 
@@ -260,14 +262,14 @@ async def sacn(bot,group_id,cookies,pt_pin):
                                 try:
                                     await bot.send_message(group_id,str1)
                                     f.write(activityId + '\n')
-                                    time.sleep(3)
+                                    time.sleep(30)
                                 except:
                                     print("发送失败,try again")
                                     time.sleep(3)
                                     try:
                                         await bot.send_message(group_id,str1)
                                         f.write(activityId + '\n')
-                                        time.sleep(3)
+                                        time.sleep(30)
                                     except:
                                         print("发送失败, stop")
 
