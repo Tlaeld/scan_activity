@@ -2,6 +2,7 @@ import asyncio
 import json
 import re
 from telegram import Bot
+from telegram.request import HTTPXRequest
 import requests
 import json
 import time
@@ -32,8 +33,9 @@ nummax = 15
 if need_proxy:
     try:
         proxy = BOT['proxy']
-        os.environ['ALL_PROXY'] = proxy
-        bot = Bot(token=BOT['bot_token'])
+        # os.environ['ALL_PROXY'] = proxy
+        res = HTTPXRequest(proxy_url=proxy)
+        bot = Bot(token=BOT['bot_token'],request=res)
     except Exception as e:
         print(e)
         proxy = None
